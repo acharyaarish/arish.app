@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/arish.app/static/js/main.88193c0f.js",
+    "main.js": "/arish.app/static/js/main.a54e7902.js",
     "static/js/284.13c0ec12.chunk.js": "/arish.app/static/js/284.13c0ec12.chunk.js",
-    "static/js/699.6f368d03.chunk.js": "/arish.app/static/js/699.6f368d03.chunk.js",
-    "static/js/443.26b850a9.chunk.js": "/arish.app/static/js/443.26b850a9.chunk.js",
-    "static/js/513.7ba0cb00.chunk.js": "/arish.app/static/js/513.7ba0cb00.chunk.js",
-    "static/js/883.26852d9c.chunk.js": "/arish.app/static/js/883.26852d9c.chunk.js",
+    "static/js/699.abe99f36.chunk.js": "/arish.app/static/js/699.abe99f36.chunk.js",
+    "static/js/443.1d760b6a.chunk.js": "/arish.app/static/js/443.1d760b6a.chunk.js",
+    "static/js/513.e4e2281f.chunk.js": "/arish.app/static/js/513.e4e2281f.chunk.js",
+    "static/js/883.06b460ae.chunk.js": "/arish.app/static/js/883.06b460ae.chunk.js",
     "static/js/57.3910f213.chunk.js": "/arish.app/static/js/57.3910f213.chunk.js",
     "static/js/195.cb668adb.chunk.js": "/arish.app/static/js/195.cb668adb.chunk.js",
     "index.html": "/arish.app/index.html",
-    "main.88193c0f.js.map": "/arish.app/static/js/main.88193c0f.js.map",
+    "main.a54e7902.js.map": "/arish.app/static/js/main.a54e7902.js.map",
     "284.13c0ec12.chunk.js.map": "/arish.app/static/js/284.13c0ec12.chunk.js.map",
-    "699.6f368d03.chunk.js.map": "/arish.app/static/js/699.6f368d03.chunk.js.map",
-    "443.26b850a9.chunk.js.map": "/arish.app/static/js/443.26b850a9.chunk.js.map",
-    "513.7ba0cb00.chunk.js.map": "/arish.app/static/js/513.7ba0cb00.chunk.js.map",
-    "883.26852d9c.chunk.js.map": "/arish.app/static/js/883.26852d9c.chunk.js.map",
+    "699.abe99f36.chunk.js.map": "/arish.app/static/js/699.abe99f36.chunk.js.map",
+    "443.1d760b6a.chunk.js.map": "/arish.app/static/js/443.1d760b6a.chunk.js.map",
+    "513.e4e2281f.chunk.js.map": "/arish.app/static/js/513.e4e2281f.chunk.js.map",
+    "883.06b460ae.chunk.js.map": "/arish.app/static/js/883.06b460ae.chunk.js.map",
     "57.3910f213.chunk.js.map": "/arish.app/static/js/57.3910f213.chunk.js.map",
     "195.cb668adb.chunk.js.map": "/arish.app/static/js/195.cb668adb.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.88193c0f.js"
+    "static/js/main.a54e7902.js"
   ]
 }
