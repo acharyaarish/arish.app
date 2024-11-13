@@ -88,9 +88,8 @@ const Experience = () => {
       location: 'Kathmandu, Nepal',
       title: 'Network Engineer Intern',
       description: [
-        'Enhanced network reliability through LAN/WAN optimizations.',
-        'Improved security with VLAN configurations and tailored access controls.',
-        'Communicated changes effectively to stakeholders, enhancing operational efficiency.',
+        'Configured networking devices and created VLANs to segment network traffic, improving security and preventing unauthorized access.',
+        'Implemented tailored access control policies based on user roles, ensuring that only authorized individuals have access to sensitive data and systems.',
       ],
       tags: ['Networking', 'Security', 'LAN/WAN'],
       progress: 80,
