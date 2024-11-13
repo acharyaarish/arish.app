@@ -38,7 +38,7 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Data Analyst Intern',
       description: [
-        'Automated large sets of triathlon cycling national and international datasets, reducing manual effort by 95% in calculation and visulization of laps.',
+        'Automated large sets of triathlon cycling national and international datasets, reducing manual effort by 100% in calculation and visulization of laps.',
         'Collaborated on innovative solutions to complex problems through advanced research.',
         'Developed race lap calculations using Python and PowerBI to enhance player performance analysis.',
       ],
@@ -52,7 +52,7 @@ const Experience = () => {
       company: 'Shoes and Sox',
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
-      location: 'Sydney, Australia',
+      location: 'Canberra, Australia',
       title: 'Sales Assistant',
       description: [
         'I developed strong administrative, analytical, and communication skills by assisting customers in product selection, managing daily tasks such as sales reporting, tracking KPIs, analyzing top-performing and underperforming products, and collaborating with management on budget oversight.',
@@ -71,9 +71,9 @@ const Experience = () => {
       location: 'Kathmandu, Nepal',
       title: 'IT Data & Systems Analyst',
       description: [
-        'Collaborated with the project manager and stakeholders to lead teams in configuring networks across all branches nationwide.',
-        'Resolved technical issues remotely and documented IT systems, including disaster recovery protocols and maintenance guides.',
-        'Customized SAP S4 Hana to meet organizational needs and executed SQL queries to optimize system performance.',
+        'Worked closely with project managers and stakeholders to lead cross-functional teams in configuring networks across all branches nationwide, ensuring consistent and efficient implementation.',
+        'Provided remote technical support, resolving network issues and documenting IT systems to maintain operational efficiency.',
+        'Customized SAP B1 to align with specific organizational requirements.',
       ],
       tags: ['ERP', 'IT Management', 'Training'],
       progress: 95,
