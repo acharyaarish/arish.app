@@ -1,36 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Flex,
   IconButton,
   Link as ChakraLink,
   useDisclosure,
-  Stack,
   Image,
   HStack,
   useColorMode,
-  Tooltip,
   Collapse,
   useBreakpointValue,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { Link as ScrollLink } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isLightMode = colorMode === 'light';
 
-  const bgColor = useColorModeValue('rgba(255, 255, 255, 0.75)', 'rgba(20, 20, 20, 0.85)');
-  const textColor = useColorModeValue('#2D3748', '#F7FAFC');
-  const primaryColor = useColorModeValue('#FCA311', '#FFD700');
-  const hoverTextColor = useColorModeValue('#FCA311', '#FFD700');
+  const [scrolled, setScrolled] = useState(false);
 
-  const fontSize = useBreakpointValue({ base: 'sm', md: 'md' });
-  const iconSize = useBreakpointValue({ base: '24px', md: '28px' });
+  // Scroll handler to change navbar background when scrolled
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Colors and styles
+  const textColor = '#FFFFFF';
+  const primaryColor = '#FFD700';
+  const bgOnScroll = scrolled ? 'rgba(0, 0, 0, 0.85)' : 'transparent';
+  const mobileMenuBg = 'rgba(0, 0, 0, 0.95)';
+
+  const fontSize = useBreakpointValue({ base: 'lg', md: 'md' });
+  const iconSize = useBreakpointValue({ base: '26px', md: '28px' });
   const paddingY = useBreakpointValue({ base: '8px', md: '10px' });
-  const logoSize = useBreakpointValue({ base: '30px', md: '34px' });
+  const logoSize = useBreakpointValue({ base: '36px', md: '40px' });
 
   const sections = [
     { name: 'About', id: 'about' },
@@ -41,17 +52,22 @@ const Navbar = () => {
     { name: 'Contact', id: 'contact' },
   ];
 
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: '-100%' },
+  };
+
   return (
     <Box
       as="nav"
-      bg={bgColor}
       px={{ base: 4, md: 6 }}
       py={paddingY}
       position="fixed"
       w="100%"
       zIndex="10"
-      backdropFilter="blur(10px)"
-      transition="background-color 0.2s ease-in-out"
+      bg={bgOnScroll}
+      transition="background-color 0.2s ease"
+      boxShadow={scrolled ? 'lg' : 'none'}
     >
       <Flex h="full" alignItems="center" justifyContent="space-between">
         <ChakraLink as={ScrollLink} to="header" smooth duration={500} offset={-50}>
@@ -61,8 +77,8 @@ const Navbar = () => {
             boxSize={logoSize}
             objectFit="contain"
             cursor="pointer"
-            transition="transform 0.3s ease-in-out"
-            _hover={{ transform: 'scale(1.08)' }}
+            transition="transform 0.2s ease"
+            _hover={{ transform: 'scale(1.05)' }}
           />
         </ChakraLink>
 
@@ -73,17 +89,16 @@ const Navbar = () => {
               to={section.id}
               smooth
               duration={500}
-              spy={true}
-              offset={-60}
               key={section.id}
               fontSize={fontSize}
               fontWeight="medium"
               color={textColor}
               cursor="pointer"
+              textDecoration="none"
               px={3}
               py={1}
-              _hover={{ color: hoverTextColor }}
-              transition="color 0.2s ease-in-out"
+              _hover={{ color: primaryColor }}
+              transition="color 0.15s ease"
             >
               {section.name}
             </ChakraLink>
@@ -91,60 +106,97 @@ const Navbar = () => {
         </HStack>
 
         <Flex alignItems="center">
-          <Tooltip label={isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode'} fontSize="xs" hasArrow>
-            <IconButton
-              onClick={toggleColorMode}
-              icon={isLightMode ? <MoonIcon /> : <SunIcon />}
-              aria-label="Toggle Color Mode"
-              bg="transparent"
-              color={primaryColor}
-              _hover={{ bg: 'transparent', color: textColor }}
-              boxSize={iconSize}
-              transition="all 0.3s ease-in-out"
-            />
-          </Tooltip>
+          <IconButton
+            onClick={toggleColorMode}
+            icon={isLightMode ? <MoonIcon /> : <SunIcon />}
+            aria-label="Toggle Color Mode"
+            bg="transparent"
+            color={primaryColor}
+            _hover={{ color: textColor }}
+            boxSize={iconSize}
+            transition="all 0.3s ease, transform 0.3s ease"
+            _active={{ transform: 'scale(1.1)' }}
+          />
 
           <IconButton
             size="lg"
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            icon={
+              isOpen ? (
+                <motion.div animate={{ rotate: 45 }} transition={{ duration: 0.2 }}>
+                  <CloseIcon />
+                </motion.div>
+              ) : (
+                <motion.div initial={{ rotate: 0 }} animate={{ rotate: 0 }} transition={{ duration: 0.2 }}>
+                  <HamburgerIcon />
+                </motion.div>
+              )
+            }
             aria-label="Toggle Navigation"
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
             bg="transparent"
             color={textColor}
-            _hover={{ bg: 'transparent', color: primaryColor }}
+            _hover={{ color: primaryColor }}
             boxSize={iconSize}
             ml={3}
-            transition="all 0.3s ease-in-out"
+            transition="all 0.2s ease"
           />
         </Flex>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <Box pb={4} display={{ md: 'none' }} textAlign="center">
-          <Stack as="nav" spacing={4}>
-            {sections.map((section) => (
-              <ChakraLink
-                as={ScrollLink}
-                to={section.id}
-                smooth
-                duration={500}
-                spy={true}
-                offset={-60}
-                key={section.id}
-                px={3}
-                py={2}
-                _hover={{ color: hoverTextColor }}
-                cursor="pointer"
-                color={textColor}
-                onClick={onClose}
-                transition="color 0.2s ease-in-out"
-              >
-                {section.name}
-              </ChakraLink>
-            ))}
-          </Stack>
-        </Box>
+        <motion.div
+          initial="closed"
+          animate={isOpen ? 'open' : 'closed'}
+          variants={variants}
+          transition={{ duration: 0.4 }}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: mobileMenuBg,
+            color: textColor,
+            zIndex: 9,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <IconButton
+            icon={<CloseIcon />}
+            aria-label="Close Menu"
+            position="absolute"
+            top="20px"
+            right="20px"
+            bg="transparent"
+            color={primaryColor}
+            onClick={onClose}
+            _hover={{ color: textColor }}
+            transition="color 0.2s ease"
+          />
+          {sections.map((section) => (
+            <ChakraLink
+              as={ScrollLink}
+              to={section.id}
+              smooth
+              duration={500}
+              key={section.id}
+              fontSize="lg"
+              fontWeight="bold"
+              color={textColor}
+              cursor="pointer"
+              textDecoration="none"
+              py={2}
+              _hover={{ color: primaryColor }}
+              onClick={onClose}
+            >
+              {section.name}
+            </ChakraLink>
+          ))}
+        </motion.div>
       </Collapse>
     </Box>
   );
