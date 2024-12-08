@@ -31,7 +31,7 @@ const Experience = () => {
   const experiences = [
     {
       logo: `${process.env.PUBLIC_URL}/img/austriathlon-logo.png`,
-      date: 'Mar 2024 – Jul 2024',
+      date: 'March 2024 – July 2024',
       company: 'AusTriathlon',
       link: 'https://www.triathlon.org.au/',
       hoverColor: 'rgba(33, 150, 243, 0.15)',
@@ -39,62 +39,33 @@ const Experience = () => {
       title: 'Data Analyst Intern',
       description: [
         'Automated large sets of triathlon cycling national and international datasets, reducing manual effort by 100% in calculation and visulization of laps.',
-        'Collaborated on innovative solutions to complex problems through advanced research.',
-        'Developed race lap calculations using Python and PowerBI to enhance player performance analysis.',
+        'Developed a robust calculation system for race laps using R, enabling in-depth analysis and real-time tracking of player performance during events.',
+        'Presented compelling data-driven insights to stakeholders via interactive PowerBI reports, facilitating informed decision-making for performance improvement.',
       ],
       tags: ['Python', 'R', 'PowerBI', 'Analytics'],
       progress: 90,
       learning: 'Gained deep insights into data automation and sports analytics using Python, R and PowerBI.'
     },
-    {
-      logo: `${process.env.PUBLIC_URL}/img/shoesandsox-logo.png`,
-      date: 'August 2022 – Present',
-      company: 'Shoes and Sox',
-      link: 'https://www.shoesandsox.com.au',
-      hoverColor: 'rgba(255, 165, 0, 0.15)',
-      location: 'Canberra, Australia',
-      title: 'Sales Assistant',
-      description: [
-        'I developed strong administrative, analytical, and communication skills by assisting customers in product selection, managing daily tasks such as sales reporting, tracking KPIs, analyzing top-performing and underperforming products, and collaborating with management on budget oversight.',
-        'Contributed to launching a new loyalty program, wrote documentation, and trained team members on the new system.',
-      ],
-      tags: ['Sales Analysis', 'Data Reporting', 'Cost Optimization'],
-      progress: 90,
-      learning: 'Learned how data-driven decisions impact sales and efficiency.'
-    },
+    
     {
       logo: `${process.env.PUBLIC_URL}/img/nepaloilcorp-logo.png`,
-      date: 'Nov 2020 – Nov 2021',
+      date: 'Nov 2019 – June 2022',
       company: 'Nepal Oil Corporation',
       link: 'https://noc.org.np/',
       hoverColor: 'rgba(244, 67, 54, 0.15)',
       location: 'Kathmandu, Nepal',
-      title: 'IT Data & Systems Analyst',
+      title: 'IT Support Engineer',
       description: [
-        'Worked closely with project managers and stakeholders to lead cross-functional teams in configuring networks across all branches nationwide, ensuring consistent and efficient implementation.',
-        'Provided remote technical support, resolving network issues and documenting IT systems to maintain operational efficiency.',
-        'Customized SAP B1 to align with specific organizational requirements.',
+        'Led the implementation of IT systems across 25 branches, achieving a 97% uptime rate and improving operational efficiency.',
+        'Migrated employee records to SAP ERP with 100% data accuracy, ensuring confidentiality.',
+        'Provided end-user support, resolving technical issues related to hardware, software, and network systems.',
+        'Enforced data security protocols, ensuring compliance with organizational policies.',
       ],
       tags: ['ERP', 'IT Management', 'Training'],
       progress: 95,
       learning: 'Mastered ERP deployment and IT management, ensuring system uptime and effective training.'
     },
-    {
-      logo: `${process.env.PUBLIC_URL}/img/outsource-array-logo.png`,
-      date: 'Nov 2019 – Feb 2020',
-      company: 'Outsource Array',
-      link: 'https://www.outsourcearray.com',
-      hoverColor: 'rgba(76, 175, 80, 0.15)',
-      location: 'Kathmandu, Nepal',
-      title: 'Network Engineer Intern',
-      description: [
-        'Configured networking devices and created VLANs to segment network traffic, improving security and preventing unauthorized access.',
-        'Implemented tailored access control policies based on user roles, ensuring that only authorized individuals have access to sensitive data and systems.',
-      ],
-      tags: ['Networking', 'Security', 'LAN/WAN'],
-      progress: 80,
-      learning: 'Gained experience in networking and security, focusing on performance optimization.'
-    },
+
   ];
 
   return (
