@@ -172,21 +172,6 @@ const Contact = () => {
               GitHub
             </Button>
           </Link>
-          <Link href="https://www.linkedin.com/in/arish-acharya-1a8a3b329/" isExternal>
-            <Button
-              leftIcon={<FaLinkedin />}
-              colorScheme="gray"
-              variant="outline"
-              fontSize="lg"
-              _hover={{ color: iconHoverColor, transform: 'scale(1.05)' }}
-              size="md"
-              fontWeight="bold"
-              borderRadius="md"
-              mr={4}
-            >
-              LinkedIn
-            </Button>
-          </Link>
         </Flex>
         <Box mt={6} fontSize="xs" color={textColor}>
           &copy; 2024 Arish Acharya - All rights reserved.
