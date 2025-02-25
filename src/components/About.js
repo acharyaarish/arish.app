@@ -74,10 +74,8 @@ const About = () => {
               Tech Enthusiast, Coffee Lover & Adventurer ☕🏔️
             </Text>
             <Text fontSize="md" lineHeight="taller" textAlign={{ base: 'center', md: 'left' }} color={textColor}>
-              From fixing computers as the neighborhood tech guy to setting up networks and working on ERP systems, I've
-              always loved tech. My journey has taken me from my uncle’s logistics business to my father’s media
-              company, and now to Australia, where I’ve automated data for Austriathlon. I’m constantly refining my skills
-              in data science and brewing the best coffee at home. Even my pug 🐕 agrees, but let’s keep that between us!
+            It all started with 🎮 modding games, tweaking settings, and breaking my PC just to fix it again. Then came the OS experiments: dual-booting Linux, Windows XP, 7, 10 (because why not?), and becoming the neighborhood tech support 💻📶. I even turned a Raspberry Pi into a movie server 🎞️ (because subscriptions are overrated).
+            From fixing networks to working on an ERP project 📊, I moved into data automation for Austriathlon 🏃‍♂️💨, working alongside a Data Lead who took Australia to the Olympics. Now, I'm leveling up my React skills ⚛️, building cool UIs, and still making the best ☕ at home.
             </Text>
           </VStack>
         </Flex>

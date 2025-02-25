@@ -13,7 +13,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub} from 'react-icons/fa';
-import { FaLinkedin} from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -174,7 +173,7 @@ const Contact = () => {
           </Link>
         </Flex>
         <Box mt={6} fontSize="xs" color={textColor}>
-          &copy; 2024 Arish Acharya - All rights reserved.
+          &copy; 2025 Arish Acharya - All rights reserved.
         </Box>
       </Container>
     </Box>

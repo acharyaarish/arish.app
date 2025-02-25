@@ -36,7 +36,7 @@ const Experience = () => {
       link: 'https://www.triathlon.org.au/',
       hoverColor: 'rgba(33, 150, 243, 0.15)',
       location: 'Canberra, Australia',
-      title: 'Data Analyst Intern',
+      title: 'Performance Analyst Intern',
       description: [
         'Automated large sets of triathlon cycling national and international datasets, reducing manual effort by 100% in calculation and visulization of laps.',
         'Developed a robust calculation system for race laps using R, enabling in-depth analysis and real-time tracking of player performance during events.',
