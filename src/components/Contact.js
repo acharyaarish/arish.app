@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -11,11 +11,15 @@ import {
   useToast,
   VStack,
   useColorModeValue,
-} from '@chakra-ui/react';
-import { FaGithub} from 'react-icons/fa';
+} from "@chakra-ui/react";
+import { FaGithub } from "react-icons/fa";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const toast = useToast();
 
   const handleChange = (e) => {
@@ -25,59 +29,59 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formUrl = 'https://formspree.io/f/mvgpzrlw';
+    const formUrl = "https://formspree.io/f/mvgpzrlw";
     fetch(formUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     })
       .then((response) => {
         if (response.ok) {
           toast({
-            title: 'Message sent.',
-            description: 'Your message was sent successfully!',
-            status: 'success',
+            title: "Message sent.",
+            description: "Your message was sent successfully!",
+            status: "success",
             duration: 5000,
             isClosable: true,
           });
-          setFormData({ name: '', email: '', message: '' });
+          setFormData({ name: "", email: "", message: "" });
         } else {
           toast({
-            title: 'Error.',
-            description: 'Failed to send message.',
-            status: 'error',
+            title: "Error.",
+            description: "Failed to send message.",
+            status: "error",
             duration: 5000,
             isClosable: true,
           });
         }
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
         toast({
-          title: 'Error.',
-          description: 'Failed to send message.',
-          status: 'error',
+          title: "Error.",
+          description: "Failed to send message.",
+          status: "error",
           duration: 5000,
           isClosable: true,
         });
       });
   };
 
-  const textColor = useColorModeValue('#2D3748', '#E2E8F0');
-  const borderColor = useColorModeValue('#E2E8F0', '#4A5568');
-  const inputBg = useColorModeValue('#FFFFFF', '#2D3748');
-  const inputFocusBorder = useColorModeValue('#3182ce', '#63B3ED');
-  const sectionBg = useColorModeValue('transparent', 'rgba(0, 0, 0, 0.8)');
-  const buttonBg = useColorModeValue('#3182ce', '#63B3ED');
-  const buttonHoverBg = useColorModeValue('#2C7A7B', '#3B82F6');
-  const iconHoverColor = useColorModeValue('#2C7A7B', '#63B3ED');
+  const textColor = useColorModeValue("#2D3748", "#E2E8F0");
+  const borderColor = useColorModeValue("#E2E8F0", "#4A5568");
+  const inputBg = useColorModeValue("#FFFFFF", "#2D3748");
+  const inputFocusBorder = useColorModeValue("#3182ce", "#63B3ED");
+  const sectionBg = useColorModeValue("transparent", "rgba(0, 0, 0, 0.8)");
+  const buttonBg = useColorModeValue("#3182ce", "#63B3ED");
+  const buttonHoverBg = useColorModeValue("#2C7A7B", "#3B82F6");
+  const iconHoverColor = useColorModeValue("#2C7A7B", "#63B3ED");
 
   return (
     <Box
       as="section"
       bg={sectionBg}
       color={textColor}
-      py={24} 
+      py={24}
       id="contact"
       position="relative"
     >
@@ -104,7 +108,10 @@ const Contact = () => {
               borderColor={borderColor}
               bg={inputBg}
               _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
+              _focus={{
+                borderColor: inputFocusBorder,
+                boxShadow: `0 0 0 1px ${inputFocusBorder}`,
+              }}
               isRequired
               size="md"
               borderRadius="md"
@@ -119,7 +126,10 @@ const Contact = () => {
               borderColor={borderColor}
               bg={inputBg}
               _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
+              _focus={{
+                borderColor: inputFocusBorder,
+                boxShadow: `0 0 0 1px ${inputFocusBorder}`,
+              }}
               isRequired
               size="md"
               borderRadius="md"
@@ -133,7 +143,10 @@ const Contact = () => {
               borderColor={borderColor}
               bg={inputBg}
               _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
+              _focus={{
+                borderColor: inputFocusBorder,
+                boxShadow: `0 0 0 1px ${inputFocusBorder}`,
+              }}
               isRequired
               size="md"
               borderRadius="md"
@@ -144,7 +157,7 @@ const Contact = () => {
             type="submit"
             bg={buttonBg}
             color="white"
-            _hover={{ bg: buttonHoverBg, transform: 'scale(1.03)' }}
+            _hover={{ bg: buttonHoverBg, transform: "scale(1.03)" }}
             size="md"
             mt={6}
             width="full"
@@ -162,7 +175,7 @@ const Contact = () => {
               colorScheme="gray"
               variant="outline"
               fontSize="lg"
-              _hover={{ color: iconHoverColor, transform: 'scale(1.05)' }}
+              _hover={{ color: iconHoverColor, transform: "scale(1.05)" }}
               size="md"
               fontWeight="bold"
               borderRadius="md"

@@ -1,17 +1,29 @@
-import React, { useEffect, useRef } from 'react';
-import { Box, Heading, Button, Image, Text, useColorModeValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-import useTypewriter from './hooks/useTypewriter';
+import React, { useEffect, useRef } from "react";
+import {
+  Box,
+  Heading,
+  Button,
+  Image,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import useTypewriter from "./hooks/useTypewriter";
 
 const Header = () => {
-  const { text, color } = useTypewriter(['IT Engineering','Frontend Development', 'Data Analytics'], 70, 50, 800);
+  const { text, color } = useTypewriter(
+    ["IT Engineering", "Frontend Development"],
+    70,
+    50,
+    800
+  );
 
-  const headingColor = useColorModeValue('#0C0C0C', '#FBEAEB');
-  const subheadingColor = useColorModeValue('#555555', '#EDEDED');
-  const buttonTextColor = useColorModeValue('#FFFFFF', '#FFFFFF');
+  const headingColor = useColorModeValue("#0C0C0C", "#FBEAEB");
+  const subheadingColor = useColorModeValue("#555555", "#EDEDED");
+  const buttonTextColor = useColorModeValue("#FFFFFF", "#FFFFFF");
 
-  const resumeButtonBg = useColorModeValue('#FFB400', '#1E90FF');
-  const githubButtonBg = useColorModeValue('#007BFF', '#FF6347');
+  const resumeButtonBg = useColorModeValue("#FFB400", "#1E90FF");
+  const githubButtonBg = useColorModeValue("#007BFF", "#FF6347");
 
   const videoRef = useRef(null);
 
@@ -28,11 +40,14 @@ const Header = () => {
           videoElement.play();
         }
       };
-      videoElement.addEventListener('canplaythrough', handleCanPlayThrough);
+      videoElement.addEventListener("canplaythrough", handleCanPlayThrough);
       videoElement.load();
 
       return () => {
-        videoElement.removeEventListener('canplaythrough', handleCanPlayThrough);
+        videoElement.removeEventListener(
+          "canplaythrough",
+          handleCanPlayThrough
+        );
       };
     }
   }, [videoSrc]);
@@ -42,14 +57,14 @@ const Header = () => {
       id="header"
       position="relative"
       overflow="hidden"
-      height="100vh"  // Ensures full screen height on all devices
+      height="100vh" // Ensures full screen height on all devices
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      p={0}  // Remove padding to prevent any overflow issues
-      m={0}  // Remove margin to ensure full screen coverage
+      p={0} // Remove padding to prevent any overflow issues
+      m={0} // Remove margin to ensure full screen coverage
     >
       <video
         ref={videoRef}
@@ -59,12 +74,12 @@ const Header = () => {
         loop
         preload="auto"
         style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: '-1',
-          transition: 'opacity 1s ease-in-out',
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: "-1",
+          transition: "opacity 1s ease-in-out",
         }}
         poster={`${process.env.PUBLIC_URL}/img/poster.jpg`}
       >
@@ -112,7 +127,7 @@ const Header = () => {
           transition={{ duration: 1 }}
           fontFamily="Poppins, sans-serif"
         >
-          {text.split('').map((char, index) => (
+          {text.split("").map((char, index) => (
             <Text
               as="span"
               key={index}
@@ -123,7 +138,13 @@ const Header = () => {
             </Text>
           ))}
         </Box>
-        <Box display="flex" justifyContent="center" alignItems="center" mt={4} flexWrap="wrap">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt={4}
+          flexWrap="wrap"
+        >
           <Button
             as="a"
             href={`${process.env.PUBLIC_URL}/img/Arish_Acharya_Resume.pdf`}
@@ -146,7 +167,12 @@ const Header = () => {
             transition="all 0.3s ease-in-out"
             boxShadow="md"
           >
-            <Image src={`${process.env.PUBLIC_URL}/img/resume-icon.png`} alt="Resume Icon" boxSize="24px" mr={2} />
+            <Image
+              src={`${process.env.PUBLIC_URL}/img/resume-icon.png`}
+              alt="Resume Icon"
+              boxSize="24px"
+              mr={2}
+            />
             View Resume
           </Button>
           <Button
@@ -171,7 +197,12 @@ const Header = () => {
             transition="all 0.3s ease-in-out"
             boxShadow="md"
           >
-            <Image src={`${process.env.PUBLIC_URL}/img/github-icon.png`} alt="GitHub Icon" boxSize="24px" mr={2} />
+            <Image
+              src={`${process.env.PUBLIC_URL}/img/github-icon.png`}
+              alt="GitHub Icon"
+              boxSize="24px"
+              mr={2}
+            />
             View GitHub
           </Button>
         </Box>
